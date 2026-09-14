@@ -1,0 +1,31 @@
+.solutions-page {
+  position: relative;
+
+  min-height: 100vh;
+
+  background:
+    var(--color-background);
+
+  transition:
+    background-color
+      var(--transition-base);
+}
+
+.solutions-page .page-header-spacer {
+  height: 82px;
+
+  background:
+    var(--header-background-solid);
+}
+
+@media (max-width: 1024px) {
+  .solutions-page .page-header-spacer {
+    height: 76px;
+  }
+}
+
+@media (max-width: 700px) {
+  .solutions-page .page-header-spacer {
+    height: 70px;
+  }
+}

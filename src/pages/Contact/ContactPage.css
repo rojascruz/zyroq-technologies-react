@@ -1,0 +1,20 @@
+.contact-page {
+  position: relative;
+}
+
+.page-header-spacer {
+  height: 82px;
+  background: #0c1017;
+}
+
+@media (max-width: 1024px) {
+  .page-header-spacer {
+    height: 76px;
+  }
+}
+
+@media (max-width: 700px) {
+  .page-header-spacer {
+    height: 70px;
+  }
+}

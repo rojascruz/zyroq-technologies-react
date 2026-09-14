@@ -1,0 +1,414 @@
+.home-cta {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 82px 0;
+
+  border-top:
+    1px solid
+    var(--color-border-soft);
+
+  background:
+    var(--color-background);
+
+  color:
+    var(--color-text);
+
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base);
+}
+
+/* =========================================================
+   DECORATIVE ACCENT
+   ========================================================= */
+
+.home-cta::before {
+  content: '';
+
+  position: absolute;
+
+  top: 0;
+  right: 0;
+
+  width: 40%;
+  height: 100%;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      transparent 10%,
+      var(--home-cta-glow) 100%
+    );
+}
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.home-cta-container {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap:
+    clamp(
+      50px,
+      8vw,
+      120px
+    );
+}
+
+/* =========================================================
+   COPY
+   ========================================================= */
+
+.home-cta-copy {
+  max-width: 760px;
+}
+
+.home-cta-eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  margin-bottom: 20px;
+}
+
+.home-cta-eyebrow > span {
+  width: 34px;
+  height: 1px;
+
+  background:
+    var(--color-accent);
+}
+
+.home-cta-eyebrow strong {
+  color:
+    var(--color-accent-light);
+
+  font-size: 0.61rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+}
+
+.home-cta h2 {
+  max-width: 740px;
+
+  margin: 0;
+
+  color:
+    var(--color-text);
+
+  font-size:
+    clamp(
+      2.25rem,
+      4vw,
+      4rem
+    );
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  letter-spacing: -0.05em;
+
+  text-wrap: balance;
+}
+
+.home-cta p {
+  max-width: 600px;
+
+  margin:
+    20px 0 0;
+
+  color:
+    var(--color-text-secondary);
+
+  font-size: 0.88rem;
+
+  line-height: 1.7;
+}
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.home-cta-actions {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  width: 255px;
+}
+
+/* =========================================================
+   PRIMARY
+   ========================================================= */
+
+.home-cta-primary {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  min-height: 54px;
+
+  padding:
+    0 17px;
+
+  border:
+    1px solid
+    var(--color-accent-light);
+
+  background:
+    var(--color-accent-light);
+
+  color:
+    #071019;
+
+  font-size: 0.75rem;
+
+  font-weight: 750;
+
+  transition:
+    transform var(--transition-fast),
+    background var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.home-cta-primary:hover {
+  transform:
+    translateY(-2px);
+
+  background:
+    var(--color-accent);
+
+  border-color:
+    var(--color-accent);
+}
+
+.home-cta-primary i {
+  font-size: 0.86rem;
+
+  transition:
+    transform var(--transition-fast);
+}
+
+.home-cta-primary:hover i {
+  transform:
+    translate(2px, -2px);
+}
+
+/* =========================================================
+   WHATSAPP
+   ========================================================= */
+
+.home-cta-whatsapp {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  min-height: 52px;
+
+  padding:
+    0 16px;
+
+  border:
+    1px solid
+    var(--color-border);
+
+  background:
+    transparent;
+
+  color:
+    var(--color-text);
+
+  font-size: 0.73rem;
+
+  font-weight: 700;
+
+  transition:
+    border-color var(--transition-fast),
+    background var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.home-cta-whatsapp:hover {
+  border-color:
+    var(--color-border-accent);
+
+  background:
+    var(--home-cta-button-hover);
+
+  color:
+    var(--color-accent-light);
+}
+
+.home-cta-whatsapp i {
+  color:
+    var(--color-accent-light);
+
+  font-size: 0.9rem;
+}
+
+/* =========================================================
+   DARK THEME
+   ========================================================= */
+
+:root,
+html[data-theme='dark'] {
+  --home-cta-glow:
+    rgba(56, 189, 248, 0.055);
+
+  --home-cta-button-hover:
+    rgba(56, 189, 248, 0.06);
+}
+
+/* =========================================================
+   LIGHT THEME
+   ========================================================= */
+
+html[data-theme='light'] {
+  --home-cta-glow:
+    rgba(2, 132, 199, 0.05);
+
+  --home-cta-button-hover:
+    rgba(2, 132, 199, 0.05);
+}
+
+/* =========================================================
+   LARGE DESKTOP
+   ========================================================= */
+
+@media (min-width: 1600px) {
+  .home-cta {
+    padding: 92px 0;
+  }
+
+  .home-cta-actions {
+    width: 275px;
+  }
+}
+
+/* =========================================================
+   LAPTOP
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .home-cta {
+    padding: 74px 0;
+  }
+
+  .home-cta-container {
+    gap: 60px;
+  }
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .home-cta-container {
+    grid-template-columns: 1fr;
+
+    gap: 34px;
+  }
+
+  .home-cta-actions {
+    width: min(
+      100%,
+      300px
+    );
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .home-cta {
+    padding: 62px 0;
+  }
+
+  .home-cta h2 {
+    font-size:
+      clamp(
+        2rem,
+        8.5vw,
+        3rem
+      );
+  }
+
+  .home-cta p {
+    font-size: 0.84rem;
+  }
+
+  .home-cta-actions {
+    width: 100%;
+  }
+
+  .home-cta-primary,
+  .home-cta-whatsapp {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .home-cta {
+    padding: 54px 0;
+  }
+
+  .home-cta-eyebrow {
+    margin-bottom: 17px;
+  }
+
+  .home-cta h2 {
+    font-size: 2rem;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (
+  prefers-reduced-motion: reduce
+) {
+  .home-cta-primary,
+  .home-cta-primary i,
+  .home-cta-whatsapp {
+    transition: none;
+  }
+}

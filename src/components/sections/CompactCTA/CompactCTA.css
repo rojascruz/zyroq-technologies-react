@@ -1,0 +1,482 @@
+/* =========================================================
+   COMPACT CTA
+   ========================================================= */
+
+.compact-cta {
+  position: relative;
+
+  padding:
+    36px 0 42px;
+
+  background:
+    var(--color-surface);
+
+  transition:
+    background-color
+      var(--transition-base);
+}
+
+.compact-cta-container {
+  position: relative;
+}
+
+/* =========================================================
+   PANEL
+   ========================================================= */
+
+.compact-cta-panel {
+  position: relative;
+
+  overflow: hidden;
+
+  min-height: 190px;
+
+  border:
+    1px solid
+    var(--compact-cta-border);
+
+  background:
+    var(--compact-cta-background);
+
+  box-shadow:
+    var(--compact-cta-shadow);
+}
+
+/* =========================================================
+   DECORATIVE DETAILS
+   ========================================================= */
+
+.compact-cta-panel::before {
+  content: '';
+
+  position: absolute;
+
+  top: -160px;
+  right: -80px;
+
+  width: 460px;
+  height: 460px;
+
+  border-radius: 50%;
+
+  background:
+    var(--compact-cta-glow);
+
+  filter:
+    blur(120px);
+
+  pointer-events: none;
+}
+
+.compact-cta-panel::after {
+  content: '';
+
+  position: absolute;
+
+  right: -40px;
+  bottom: -120px;
+
+  width: 500px;
+  height: 240px;
+
+  border:
+    1px solid
+    var(--compact-cta-curve);
+
+  border-radius: 50%;
+
+  transform:
+    rotate(-8deg);
+
+  pointer-events: none;
+}
+
+.compact-cta-accent {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 150px;
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--color-accent),
+      transparent
+    );
+}
+
+/* =========================================================
+   CONTENT LAYOUT
+   ========================================================= */
+
+.compact-cta-content {
+  position: relative;
+
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap:
+    clamp(
+      50px,
+      8vw,
+      110px
+    );
+
+  min-height: 190px;
+
+  padding:
+    36px 40px;
+}
+
+/* =========================================================
+   COPY
+   ========================================================= */
+
+.compact-cta-copy {
+  max-width: 760px;
+}
+
+.compact-cta-eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 13px;
+}
+
+.compact-cta-eyebrow > span {
+  width: 28px;
+  height: 1px;
+
+  flex-shrink: 0;
+
+  background:
+    var(--color-accent);
+}
+
+.compact-cta-eyebrow strong {
+  color:
+    #8bdcff;
+
+  font-size: 0.56rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+}
+
+.compact-cta h2 {
+  max-width: 760px;
+
+  margin:
+    0 0 10px;
+
+  color:
+    #f8fafc;
+
+  font-size:
+    clamp(
+      1.9rem,
+      2.6vw,
+      2.75rem
+    );
+
+  font-weight: 600;
+
+  line-height: 1.04;
+
+  letter-spacing:
+    -0.04em;
+
+  text-wrap: balance;
+}
+
+.compact-cta p {
+  max-width: 620px;
+
+  margin: 0;
+
+  color:
+    rgba(248, 250, 252, 0.58);
+
+  font-size: 0.8rem;
+
+  line-height: 1.6;
+}
+
+/* =========================================================
+   ACTION
+   ========================================================= */
+
+.compact-cta-action {
+  display: flex;
+
+  align-items: flex-end;
+
+  flex-direction: column;
+
+  gap: 11px;
+
+  min-width: 225px;
+}
+
+.compact-cta-button {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 22px;
+
+  width: 100%;
+
+  min-width: 220px;
+  min-height: 52px;
+
+  padding:
+    0 9px 0 17px;
+
+  border:
+    1px solid
+    #38bdf8;
+
+  background:
+    #38bdf8;
+
+  color:
+    #071019;
+
+  font-size: 0.72rem;
+
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    transform
+      var(--transition-fast),
+    background
+      var(--transition-fast),
+    border-color
+      var(--transition-fast);
+}
+
+.compact-cta-button:hover {
+  transform:
+    translateY(-2px);
+
+  border-color:
+    #8bdcff;
+
+  background:
+    #8bdcff;
+}
+
+.compact-cta-button-icon {
+  display: grid;
+
+  place-items: center;
+
+  width: 32px;
+  height: 32px;
+
+  flex-shrink: 0;
+
+  background:
+    #071019;
+
+  color:
+    #ffffff;
+}
+
+.compact-cta-button-icon i {
+  line-height: 1;
+
+  transition:
+    transform
+      var(--transition-fast);
+}
+
+.compact-cta-button:hover
+.compact-cta-button-icon i {
+  transform:
+    translate(2px, -2px);
+}
+
+.compact-cta-meta {
+  color:
+    rgba(248, 250, 252, 0.28);
+
+  font-size: 0.48rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   DARK THEME
+   ========================================================= */
+
+:root,
+html[data-theme='dark'] {
+  --compact-cta-background:
+    #081927;
+
+  --compact-cta-border:
+    rgba(56, 189, 248, 0.16);
+
+  --compact-cta-shadow:
+    0 20px 50px
+    rgba(0, 0, 0, 0.18);
+
+  --compact-cta-glow:
+    rgba(56, 189, 248, 0.1);
+
+  --compact-cta-curve:
+    rgba(56, 189, 248, 0.1);
+}
+
+/* =========================================================
+   LIGHT THEME
+   ========================================================= */
+
+html[data-theme='light'] {
+  --compact-cta-background:
+    #081927;
+
+  --compact-cta-border:
+    rgba(56, 189, 248, 0.18);
+
+  --compact-cta-shadow:
+    0 18px 45px
+    rgba(15, 23, 42, 0.1);
+
+  --compact-cta-glow:
+    rgba(56, 189, 248, 0.12);
+
+  --compact-cta-curve:
+    rgba(56, 189, 248, 0.12);
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .compact-cta-content {
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+
+    min-height: auto;
+
+    padding:
+      34px 32px;
+  }
+
+  .compact-cta-action {
+    align-items: flex-start;
+
+    width:
+      min(
+        100%,
+        280px
+      );
+
+    min-width: 0;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .compact-cta {
+    padding:
+      28px 0 32px;
+  }
+
+  .compact-cta-content {
+    padding:
+      29px 24px;
+  }
+
+  .compact-cta h2 {
+    font-size:
+      clamp(
+        1.7rem,
+        7vw,
+        2.3rem
+      );
+  }
+
+  .compact-cta p {
+    font-size: 0.77rem;
+  }
+
+  .compact-cta-action {
+    width: 100%;
+  }
+
+  .compact-cta-button {
+    width: 100%;
+
+    min-width: 0;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .compact-cta {
+    padding:
+      24px 0 28px;
+  }
+
+  .compact-cta-content {
+    padding:
+      26px 20px;
+  }
+
+  .compact-cta h2 {
+    font-size: 1.75rem;
+  }
+
+  .compact-cta-meta {
+    display: none;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (
+  prefers-reduced-motion: reduce
+) {
+  .compact-cta-button,
+  .compact-cta-button-icon i {
+    transition: none;
+  }
+}

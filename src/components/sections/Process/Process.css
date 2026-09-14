@@ -1,0 +1,659 @@
+/* =========================================================
+   PROCESS
+   ========================================================= */
+
+.process-section {
+  position: relative;
+
+  overflow: hidden;
+
+  padding:
+    82px 0 88px;
+
+  background:
+    var(--process-background);
+
+  color:
+    var(--color-text);
+
+  border-top:
+    1px solid
+    var(--color-border-soft);
+
+  border-bottom:
+    1px solid
+    var(--color-border-soft);
+
+  transition:
+    background-color
+      var(--transition-base),
+    color
+      var(--transition-base);
+}
+
+/* =========================================================
+   BACKGROUND DETAIL
+   ========================================================= */
+
+.process-section::before {
+  content: '';
+
+  position: absolute;
+
+  top: -180px;
+  right: -120px;
+
+  width: 500px;
+  height: 500px;
+
+  border-radius: 50%;
+
+  background:
+    var(--process-glow);
+
+  filter:
+    blur(120px);
+
+  pointer-events: none;
+}
+
+.process-container {
+  position: relative;
+
+  z-index: 2;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.process-header {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(280px, 0.42fr);
+
+  align-items: end;
+
+  gap:
+    clamp(
+      55px,
+      8vw,
+      110px
+    );
+
+  margin-bottom: 48px;
+}
+
+.process-heading {
+  max-width: 700px;
+}
+
+/* =========================================================
+   EYEBROW
+   ========================================================= */
+
+.process-eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  margin-bottom: 18px;
+}
+
+.process-eyebrow > span {
+  width: 34px;
+  height: 1px;
+
+  flex-shrink: 0;
+
+  background:
+    var(--color-accent);
+}
+
+.process-eyebrow strong {
+  color:
+    var(--color-accent-light);
+
+  font-size: 0.59rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.process-heading h2 {
+  max-width: 680px;
+
+  margin: 0;
+
+  color:
+    var(--color-text);
+
+  font-size:
+    clamp(
+      2.55rem,
+      3.75vw,
+      4.15rem
+    );
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  letter-spacing:
+    -0.05em;
+
+  text-wrap: balance;
+}
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.process-description {
+  max-width: 390px;
+
+  margin: 0;
+
+  color:
+    var(--color-text-secondary);
+
+  font-size: 0.85rem;
+
+  line-height: 1.68;
+}
+
+/* =========================================================
+   FLOW
+   ========================================================= */
+
+.process-flow {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(0, 1fr)
+    );
+
+  border-top:
+    1px solid
+    var(--color-border);
+
+  border-bottom:
+    1px solid
+    var(--color-border);
+}
+
+/* =========================================================
+   STEP
+   ========================================================= */
+
+.process-step {
+  position: relative;
+
+  min-width: 0;
+
+  min-height: 205px;
+
+  padding:
+    25px 25px 27px;
+
+  border-right:
+    1px solid
+    var(--color-border-soft);
+
+  transition:
+    background
+      var(--transition-fast);
+}
+
+.process-step:last-child {
+  border-right: 0;
+}
+
+.process-step:hover {
+  background:
+    var(--process-step-hover);
+}
+
+/* =========================================================
+   STEP TOP
+   ========================================================= */
+
+.process-step-top {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  min-height: 44px;
+
+  margin-bottom: 28px;
+}
+
+/* =========================================================
+   ICON
+   ========================================================= */
+
+.process-icon {
+  position: relative;
+
+  z-index: 2;
+
+  display: grid;
+
+  place-items: center;
+
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  border:
+    1px solid
+    var(--color-border-accent);
+
+  border-radius: 50%;
+
+  background:
+    var(--process-icon-background);
+
+  color:
+    var(--color-accent-light);
+
+  font-size: 0.9rem;
+
+  transition:
+    transform
+      var(--transition-fast),
+    background
+      var(--transition-fast),
+    border-color
+      var(--transition-fast),
+    color
+      var(--transition-fast);
+}
+
+.process-icon i {
+  display: block;
+
+  line-height: 1;
+}
+
+.process-step:hover
+.process-icon {
+  transform:
+    translateY(-3px);
+
+  border-color:
+    var(--color-accent);
+
+  background:
+    var(--process-icon-hover);
+}
+
+/* =========================================================
+   CONNECTOR
+   ========================================================= */
+
+.process-connector {
+  position: absolute;
+
+  top: 50%;
+  left: 58px;
+  right: -25px;
+
+  height: 1px;
+
+  transform:
+    translateY(-50%);
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--process-line-start),
+      var(--process-line-end)
+    );
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   STEP CONTENT
+   ========================================================= */
+
+.process-step-copy {
+  max-width: 235px;
+}
+
+.process-step-copy h3 {
+  margin:
+    0 0 10px;
+
+  color:
+    var(--color-text);
+
+  font-size: 1.08rem;
+
+  font-weight: 650;
+
+  line-height: 1.15;
+
+  letter-spacing:
+    -0.025em;
+}
+
+.process-step-copy p {
+  margin: 0;
+
+  color:
+    var(--color-text-secondary);
+
+  font-size: 0.74rem;
+
+  line-height: 1.6;
+}
+
+/* =========================================================
+   DARK THEME
+   ========================================================= */
+
+:root,
+html[data-theme='dark'] {
+  --process-background:
+    #0b1017;
+
+  --process-glow:
+    rgba(56, 189, 248, 0.04);
+
+  --process-step-hover:
+    rgba(255, 255, 255, 0.018);
+
+  --process-icon-background:
+    rgba(56, 189, 248, 0.035);
+
+  --process-icon-hover:
+    rgba(56, 189, 248, 0.07);
+
+  --process-line-start:
+    rgba(56, 189, 248, 0.3);
+
+  --process-line-end:
+    rgba(56, 189, 248, 0.03);
+}
+
+/* =========================================================
+   LIGHT THEME
+   ========================================================= */
+
+html[data-theme='light'] {
+  --process-background:
+    #f4faff;
+
+  --process-glow:
+    rgba(2, 132, 199, 0.055);
+
+  --process-step-hover:
+    rgba(2, 132, 199, 0.025);
+
+  --process-icon-background:
+    rgba(255, 255, 255, 0.75);
+
+  --process-icon-hover:
+    rgba(2, 132, 199, 0.06);
+
+  --process-line-start:
+    rgba(2, 132, 199, 0.32);
+
+  --process-line-end:
+    rgba(2, 132, 199, 0.04);
+}
+
+/* =========================================================
+   LARGE DESKTOP
+   ========================================================= */
+
+@media (min-width: 1600px) {
+  .process-section {
+    padding:
+      92px 0 98px;
+  }
+
+  .process-step {
+    min-height: 215px;
+  }
+}
+
+/* =========================================================
+   LAPTOP
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .process-header {
+    gap: 55px;
+  }
+
+  .process-step {
+    padding:
+      23px 20px 25px;
+  }
+
+  .process-connector {
+    left: 58px;
+    right: -20px;
+  }
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
+  .process-section {
+    padding:
+      75px 0 80px;
+  }
+
+  .process-header {
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+  }
+
+  .process-description {
+    max-width: 580px;
+  }
+
+  .process-flow {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+
+  .process-step:nth-child(2) {
+    border-right: 0;
+  }
+
+  .process-step:nth-child(-n + 2) {
+    border-bottom:
+      1px solid
+      var(--color-border-soft);
+  }
+
+  .process-step:nth-child(2)
+  .process-connector,
+  .process-step:nth-child(4)
+  .process-connector {
+    display: none;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .process-section {
+    padding:
+      62px 0 68px;
+  }
+
+  .process-header {
+    margin-bottom: 34px;
+  }
+
+  .process-heading h2 {
+    font-size:
+      clamp(
+        2.2rem,
+        9vw,
+        3rem
+      );
+  }
+
+  .process-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .process-step,
+  .process-step:nth-child(2) {
+    display: grid;
+
+    grid-template-columns:
+      54px
+      minmax(0, 1fr);
+
+    align-items: start;
+
+    gap: 18px;
+
+    min-height: auto;
+
+    padding:
+      24px 0;
+
+    border-right: 0;
+
+    border-bottom:
+      1px solid
+      var(--color-border-soft);
+  }
+
+  .process-step:last-child {
+    border-bottom: 0;
+  }
+
+  .process-step-top {
+    min-height: auto;
+
+    margin: 0;
+  }
+
+  .process-icon {
+    width: 42px;
+    height: 42px;
+
+    font-size: 0.86rem;
+  }
+
+  .process-connector {
+    display: none;
+  }
+
+  .process-step-copy {
+    max-width: none;
+  }
+
+  .process-step-copy h3 {
+    margin-top: 2px;
+
+    font-size: 1.05rem;
+  }
+
+  .process-step-copy p {
+    max-width: 440px;
+
+    font-size: 0.74rem;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .process-section {
+    padding:
+      55px 0 60px;
+  }
+
+  .process-eyebrow {
+    margin-bottom: 16px;
+  }
+
+  .process-eyebrow > span {
+    width: 28px;
+  }
+
+  .process-heading h2 {
+    font-size: 2.15rem;
+  }
+
+  .process-description {
+    font-size: 0.81rem;
+  }
+
+  .process-step,
+  .process-step:nth-child(2) {
+    grid-template-columns:
+      48px
+      minmax(0, 1fr);
+
+    gap: 15px;
+
+    padding:
+      21px 0;
+  }
+
+  .process-icon {
+    width: 40px;
+    height: 40px;
+
+    font-size: 0.82rem;
+  }
+
+  .process-step-copy h3 {
+    font-size: 1rem;
+  }
+
+  .process-step-copy p {
+    font-size: 0.72rem;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (
+  prefers-reduced-motion: reduce
+) {
+  .process-step,
+  .process-icon {
+    transition: none;
+  }
+}
