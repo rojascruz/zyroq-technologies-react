@@ -6,7 +6,7 @@ export const siteConfig = {
 
   whatsappNumber: '17872390907',
 
-  email: 'temp.@gmail.com',
+  email: 'contact@zyroqtechnologies.com',
 
   projects: {
     frcSecurity: {
