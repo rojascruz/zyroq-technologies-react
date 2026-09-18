@@ -1,4 +1,4 @@
-.solutions-page {
+.packages-page {
   position: relative;
 
   min-height: 100vh;
@@ -11,7 +11,7 @@
       var(--transition-base);
 }
 
-.solutions-page .page-header-spacer {
+.packages-page .page-header-spacer {
   height: 82px;
 
   background:
@@ -19,13 +19,15 @@
 }
 
 @media (max-width: 1024px) {
-  .solutions-page .page-header-spacer {
+  .packages-page
+  .page-header-spacer {
     height: 76px;
   }
 }
 
 @media (max-width: 700px) {
-  .solutions-page .page-header-spacer {
+  .packages-page
+  .page-header-spacer {
     height: 70px;
   }
 }

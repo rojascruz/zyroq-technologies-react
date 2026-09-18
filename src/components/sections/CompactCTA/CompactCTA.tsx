@@ -6,7 +6,6 @@ import './CompactCTA.css'
 
 type CompactCTAVariant =
   | 'services'
-  | 'solutions'
 
 interface CompactCTAProps {
   variant: CompactCTAVariant

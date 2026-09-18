@@ -2,7 +2,7 @@ export const commonEs = {
   navigation: {
     home: 'Inicio',
     services: 'Servicios',
-    solutions: 'Soluciones',
+    packages: 'Paquetes',
     contact: 'Contacto',
     quote: 'Solicitar cotización',
   },

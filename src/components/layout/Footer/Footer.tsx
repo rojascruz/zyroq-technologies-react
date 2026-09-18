@@ -149,11 +149,11 @@ function Footer() {
               </NavLink>
 
               <NavLink
-                to="/solutions"
+                to="/packages"
                 className="footer-nav-link"
               >
                 <span>
-                  {t.common.navigation.solutions}
+                  {t.common.navigation.packages}
                 </span>
 
                 <i

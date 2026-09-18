@@ -161,7 +161,7 @@ function Header() {
           </NavLink>
 
           <NavLink
-            to="/solutions"
+            to="/packages"
             onClick={closeMenus}
             className={({ isActive }) =>
               isActive
@@ -169,7 +169,7 @@ function Header() {
                 : undefined
             }
           >
-            {t.common.navigation.solutions}
+            {t.common.navigation.packages}
           </NavLink>
 
 
