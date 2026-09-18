@@ -1,5 +1,6 @@
 import {
   BrowserRouter,
+  Navigate,
   Route,
   Routes,
 } from 'react-router-dom'
@@ -10,7 +11,7 @@ import WhatsAppButton from './components/layout/WhatsAppButton/WhatsAppButton'
 
 import Home from './pages/Home/Home'
 import ServicesPage from './pages/Services/ServicesPage'
-import SolutionsPage from './pages/Solutions/SolutionsPage'
+import PackagesPage from './pages/Packages/PackagesPage'
 import ContactPage from './pages/Contact/ContactPage'
 import NotFoundPage from './pages/NotFound/NotFoundPage'
 
@@ -31,8 +32,18 @@ function App() {
         />
 
         <Route
+          path="/packages"
+          element={<PackagesPage />}
+        />
+
+        <Route
           path="/solutions"
-          element={<SolutionsPage />}
+          element={
+            <Navigate
+              to="/packages"
+              replace
+            />
+          }
         />
 
         <Route
