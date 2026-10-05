@@ -3,6 +3,7 @@ export const commonEn = {
     home: 'Home',
     services: 'Services',
     packages: 'Packages',
+    templates: 'Designs',
     contact: 'Contact',
     quote: 'Request a quote',
   },

@@ -1,0 +1,15 @@
+.templates-page {
+  min-height: 100vh;
+  background:
+    var(--color-background);
+}
+
+.templates-page-header-space {
+  height: 84px;
+}
+
+@media (max-width: 768px) {
+  .templates-page-header-space {
+    height: 72px;
+  }
+}

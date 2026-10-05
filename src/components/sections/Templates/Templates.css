@@ -1,0 +1,2883 @@
+/* =========================================================
+   ZYROQ TECHNOLOGIES
+   TEMPLATES / WEBSITE SHOWCASE
+
+   Desktop preview: 960px
+   Tablet preview:  660px
+   Mobile preview:  375px
+
+   IMPORTANTE:
+   Los demos responden al ancho del PREVIEW mediante
+   Container Queries, no al ancho físico del navegador.
+   ========================================================= */
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.templates {
+  position: relative;
+  overflow: hidden;
+
+  padding: 72px 0 110px;
+
+  color: var(--color-text);
+  background: var(--color-background);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.templates-hero {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto;
+
+  gap: 48px;
+
+  align-items: end;
+
+  padding-bottom: 56px;
+
+  border-bottom:
+    1px solid
+    var(--color-border);
+}
+
+.templates-hero-copy {
+  max-width: 850px;
+}
+
+.templates-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 18px;
+
+  color: var(--color-accent);
+
+  font-size: 0.72rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+}
+
+.templates-eyebrow::before {
+  content: '';
+
+  width: 28px;
+  height: 1px;
+
+  background: var(--color-accent);
+}
+
+.templates-hero h1 {
+  margin: 0;
+
+  max-width: 880px;
+
+  font-size:
+    clamp(
+      2.9rem,
+      6vw,
+      5.7rem
+    );
+
+  font-weight: 500;
+
+  line-height: 0.97;
+
+  letter-spacing: -0.055em;
+}
+
+.templates-hero p {
+  max-width: 700px;
+
+  margin: 28px 0 0;
+
+  color: var(--color-text-secondary);
+
+  font-size: 1.05rem;
+
+  line-height: 1.8;
+}
+
+.templates-hero-badge {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 11px 15px;
+
+  border:
+    1px solid
+    var(--color-border);
+
+  border-radius:
+    var(--radius-pill);
+
+  color:
+    var(--color-text-secondary);
+
+  font-size: 0.68rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  white-space: nowrap;
+}
+
+.templates-hero-badge-dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background:
+    var(--color-accent);
+
+  box-shadow:
+    0 0 14px
+    var(--color-accent);
+}
+
+
+/* =========================================================
+   FILTERS
+   ========================================================= */
+
+.templates-filter-area {
+  position: relative;
+
+  padding: 30px 0 40px;
+}
+
+.templates-filters {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 9px;
+}
+
+.templates-filter {
+  min-height: 42px;
+
+  padding: 0 17px;
+
+  border:
+    1px solid
+    var(--color-border);
+
+  border-radius:
+    var(--radius-pill);
+
+  color:
+    var(--color-text-secondary);
+
+  background: transparent;
+
+  font: inherit;
+
+  font-size: 0.82rem;
+
+  cursor: pointer;
+
+  transition:
+    color var(--transition-fast),
+    background var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.templates-filter:hover {
+  color: var(--color-text);
+
+  border-color:
+    var(--color-text-muted);
+}
+
+.templates-filter.is-active {
+  color:
+    var(--button-primary-text);
+
+  background:
+    var(--button-primary-background);
+
+  border-color:
+    var(--button-primary-background);
+}
+
+
+/* =========================================================
+   TEMPLATE GRID
+   ========================================================= */
+
+.templates-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap: 28px;
+}
+
+.template-card {
+  min-width: 0;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    var(--color-border);
+
+  border-radius:
+    var(--radius-xl);
+
+  background:
+    var(--color-surface);
+
+  transition:
+    transform var(--transition-base),
+    border-color var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.template-card:hover {
+  transform:
+    translateY(-5px);
+
+  border-color:
+    var(--color-border-accent);
+
+  box-shadow:
+    var(--shadow-md);
+}
+
+
+/* También hacemos que las tarjetas sean containers.
+   Así sus demos compactos responden correctamente. */
+
+.template-card-preview {
+  position: relative;
+
+  container-type: inline-size;
+
+  overflow: hidden;
+
+  min-height: 370px;
+
+  border-bottom:
+    1px solid
+    var(--color-border);
+}
+
+.template-card-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  opacity: 0;
+
+  background:
+    rgba(0, 0, 0, 0.28);
+
+  backdrop-filter:
+    blur(3px);
+
+  transition:
+    opacity var(--transition-base);
+}
+
+.template-card:hover
+.template-card-overlay {
+  opacity: 1;
+}
+
+.template-preview-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 12px 17px;
+
+  border: 0;
+
+  border-radius:
+    var(--radius-pill);
+
+  background: #ffffff;
+
+  color: #050505;
+
+  font: inherit;
+
+  font-size: 0.8rem;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.template-card-content {
+  padding: 26px 26px 28px;
+}
+
+.template-card-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content:
+    space-between;
+
+  gap: 20px;
+
+  margin-bottom: 24px;
+}
+
+.template-card-number {
+  color:
+    var(--color-text-muted);
+
+  font-size: 0.72rem;
+
+  letter-spacing: 0.12em;
+}
+
+.template-card-category {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color:
+    var(--color-text-secondary);
+
+  font-size: 0.74rem;
+}
+
+.template-card h2 {
+  margin: 0;
+
+  font-size:
+    clamp(
+      1.8rem,
+      3vw,
+      2.5rem
+    );
+
+  font-weight: 500;
+
+  letter-spacing:
+    -0.04em;
+}
+
+.template-card-tagline {
+  margin: 12px 0 0;
+
+  color:
+    var(--color-text);
+
+  line-height: 1.6;
+}
+
+.template-card-description {
+  margin: 10px 0 0;
+
+  color:
+    var(--color-text-secondary);
+
+  font-size: 0.92rem;
+
+  line-height: 1.7;
+}
+
+.template-card-features {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin-top: 22px;
+}
+
+.template-card-features span {
+  padding: 7px 10px;
+
+  border:
+    1px solid
+    var(--color-border);
+
+  border-radius:
+    var(--radius-pill);
+
+  color:
+    var(--color-text-muted);
+
+  font-size: 0.68rem;
+}
+
+.template-card-request {
+  display: flex;
+
+  align-items: center;
+
+  justify-content:
+    space-between;
+
+  width: 100%;
+
+  margin-top: 25px;
+
+  padding: 14px 0 0;
+
+  border: 0;
+
+  border-top:
+    1px solid
+    var(--color-border);
+
+  color:
+    var(--color-text);
+
+  background:
+    transparent;
+
+  font: inherit;
+
+  font-size: 0.83rem;
+
+  cursor: pointer;
+}
+
+.template-card-request i {
+  transition:
+    transform
+    var(--transition-fast);
+}
+
+.template-card-request:hover i {
+  transform:
+    translateX(4px);
+}
+
+
+/* =========================================================
+   BOTTOM CTA
+   ========================================================= */
+
+.templates-cta {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content:
+    space-between;
+
+  gap: 50px;
+
+  margin-top: 95px;
+
+  padding: 50px 0 0;
+
+  border-top:
+    1px solid
+    var(--color-border);
+}
+
+.templates-cta > div {
+  max-width: 720px;
+}
+
+.templates-cta h2 {
+  margin: 0;
+
+  font-size:
+    clamp(
+      2rem,
+      4vw,
+      3.7rem
+    );
+
+  font-weight: 500;
+
+  line-height: 1.05;
+
+  letter-spacing:
+    -0.045em;
+}
+
+.templates-cta p {
+  max-width: 620px;
+
+  margin: 18px 0 0;
+
+  color:
+    var(--color-text-secondary);
+
+  line-height: 1.7;
+}
+
+.templates-cta-button,
+.template-modal-request {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  min-height: 48px;
+
+  padding: 0 19px;
+
+  border: 0;
+
+  border-radius:
+    var(--radius-pill);
+
+  color:
+    var(--button-primary-text);
+
+  background:
+    var(--button-primary-background);
+
+  font: inherit;
+
+  font-size: 0.82rem;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.template-modal {
+  position: fixed;
+
+  z-index: 9999;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 24px;
+
+  background:
+    rgba(0, 0, 0, 0.78);
+
+  backdrop-filter:
+    blur(12px);
+}
+
+.template-modal-panel {
+  display: flex;
+
+  flex-direction: column;
+
+  width:
+    min(
+      1180px,
+      100%
+    );
+
+  max-height:
+    calc(
+      100vh - 48px
+    );
+
+  overflow: auto;
+
+  border:
+    1px solid
+    var(--color-border);
+
+  border-radius:
+    var(--radius-xl);
+
+  background:
+    var(--color-background);
+
+  box-shadow:
+    var(--shadow-lg);
+}
+
+.template-modal-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content:
+    space-between;
+
+  gap: 30px;
+
+  padding: 24px 28px;
+
+  border-bottom:
+    1px solid
+    var(--color-border);
+}
+
+.template-modal-header
+.templates-eyebrow {
+  margin-bottom: 6px;
+}
+
+.template-modal-header h2 {
+  margin: 0;
+
+  font-size: 1.45rem;
+
+  font-weight: 500;
+}
+
+.template-modal-close {
+  display: grid;
+
+  place-items: center;
+
+  width: 42px;
+  height: 42px;
+
+  flex: 0 0 auto;
+
+  border:
+    1px solid
+    var(--color-border);
+
+  border-radius: 50%;
+
+  color:
+    var(--color-text);
+
+  background:
+    transparent;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   DEVICE SELECTOR
+   ========================================================= */
+
+.template-device-selector {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 16px 20px;
+
+  border-bottom:
+    1px solid
+    var(--color-border);
+}
+
+.template-device-selector button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  min-height: 40px;
+
+  padding: 0 14px;
+
+  border:
+    1px solid
+    var(--color-border);
+
+  border-radius:
+    var(--radius-pill);
+
+  color:
+    var(--color-text-secondary);
+
+  background:
+    transparent;
+
+  font: inherit;
+
+  font-size: 0.74rem;
+
+  cursor: pointer;
+
+  transition:
+    color var(--transition-fast),
+    background var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.template-device-selector
+button.is-active {
+  color:
+    var(--button-primary-text);
+
+  background:
+    var(--button-primary-background);
+
+  border-color:
+    var(--button-primary-background);
+}
+
+
+/* =========================================================
+   DEVICE STAGE
+   ========================================================= */
+
+.template-device-stage {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: flex-start;
+
+  min-height: 560px;
+
+  padding: 34px;
+
+  overflow: auto;
+
+  background:
+    var(--color-surface);
+}
+
+
+/* MUY IMPORTANTE:
+   Este elemento es el container real del website demo.
+
+   Eso permite que:
+   - Desktop responda como 960px
+   - Tablet responda como 660px
+   - Mobile responda como 375px
+
+   sin importar si el usuario real está usando teléfono,
+   tablet o computadora.
+*/
+
+.template-device-frame {
+  container-type: inline-size;
+
+  flex: 0 0 auto;
+
+  overflow: hidden;
+
+  border:
+    8px solid
+    #171717;
+
+  border-radius: 16px;
+
+  background:
+    #ffffff;
+
+  box-shadow:
+    0 30px 80px
+    rgba(0, 0, 0, 0.28);
+
+  transition:
+    width var(--transition-base),
+    max-width var(--transition-base);
+}
+
+
+/* =========================================================
+   SIMULATED DEVICE WIDTHS
+   ========================================================= */
+
+.template-device-desktop {
+  width: 960px;
+
+  max-width: 960px;
+}
+
+.template-device-tablet {
+  width: 660px;
+
+  max-width: 660px;
+}
+
+.template-device-mobile {
+  width: 375px;
+
+  max-width: 375px;
+}
+
+
+/* =========================================================
+   MODAL FOOTER
+   ========================================================= */
+
+.template-modal-footer {
+  display: flex;
+
+  align-items: center;
+
+  justify-content:
+    space-between;
+
+  gap: 40px;
+
+  padding: 24px 28px;
+
+  border-top:
+    1px solid
+    var(--color-border);
+}
+
+.template-modal-footer > div {
+  max-width: 650px;
+}
+
+.template-modal-footer strong {
+  display: block;
+
+  margin-bottom: 6px;
+}
+
+.template-modal-footer p {
+  margin: 0;
+
+  color:
+    var(--color-text-secondary);
+
+  font-size: 0.87rem;
+
+  line-height: 1.6;
+}
+
+.templates-language-marker {
+  display: none;
+}
+
+
+/* =========================================================
+   DEMO SITE BASE
+   ========================================================= */
+
+.demo-site {
+  width: 100%;
+
+  min-height: 520px;
+
+  overflow: hidden;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+.demo-site.is-compact {
+  min-height: 370px;
+}
+
+.demo-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content:
+    space-between;
+
+  gap: 20px;
+
+  padding: 20px 26px;
+
+  font-size: 0.7rem;
+
+  letter-spacing: 0.08em;
+}
+
+.demo-header nav {
+  display: flex;
+
+  gap: 20px;
+
+  opacity: 0.62;
+}
+
+.demo-site.is-compact
+.demo-header {
+  padding: 15px 18px;
+}
+
+.demo-site.is-compact
+.demo-header nav {
+  gap: 10px;
+
+  font-size: 0.58rem;
+}
+
+.demo-kicker {
+  display: block;
+
+  margin-bottom: 13px;
+
+  font-size: 0.62rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+
+  opacity: 0.58;
+}
+
+
+/* Ya NO utilizamos VW.
+
+   cqw = porcentaje del ancho del DEVICE PREVIEW.
+*/
+
+.demo-site h3 {
+  margin: 0;
+
+  font-size:
+    clamp(
+      2.2rem,
+      8cqw,
+      5.3rem
+    );
+
+  line-height: 0.96;
+
+  letter-spacing:
+    -0.06em;
+
+  overflow-wrap: normal;
+
+  word-break: normal;
+}
+
+.demo-site p {
+  max-width: 430px;
+
+  margin: 20px 0 0;
+
+  line-height: 1.7;
+
+  opacity: 0.68;
+}
+
+.demo-site button {
+  margin-top: 24px;
+
+  padding: 11px 16px;
+
+  border: 0;
+
+  font: inherit;
+
+  font-size: 0.62rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   NOVA LEGAL
+   ========================================================= */
+
+.demo-legal {
+  color: #f4f1ea;
+
+  background:
+    #111111;
+}
+
+.demo-legal-hero {
+  display: grid;
+
+  grid-template-columns:
+    1.25fr
+    0.75fr;
+
+  gap: 40px;
+
+  min-height: 360px;
+
+  padding:
+    60px 55px 35px;
+}
+
+.demo-legal-hero
+> div:first-child {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+.demo-legal h3 {
+  max-width: 620px;
+
+  font-family:
+    Georgia,
+    'Times New Roman',
+    serif;
+
+  font-weight: 400;
+}
+
+.demo-legal button {
+  align-self:
+    flex-start;
+
+  color:
+    #111111;
+
+  background:
+    #f4f1ea;
+}
+
+.demo-legal-art {
+  display: grid;
+
+  place-items: center;
+
+  min-height: 270px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.16
+    );
+
+  background:
+    linear-gradient(
+      145deg,
+      #3b3b3b,
+      #171717
+    );
+}
+
+.demo-legal-art span {
+  font-family:
+    Georgia,
+    serif;
+
+  font-size: 5rem;
+
+  opacity: 0.12;
+}
+
+.demo-legal-stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      1fr
+    );
+
+  border-top:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.12
+    );
+}
+
+.demo-legal-stats div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  padding:
+    19px 26px;
+
+  border-right:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.1
+    );
+}
+
+.demo-legal-stats strong {
+  font-size: 1rem;
+}
+
+.demo-legal-stats span {
+  font-size: 0.6rem;
+
+  opacity: 0.55;
+}
+
+
+/* =========================================================
+   SAVORÉ
+   ========================================================= */
+
+.demo-savore {
+  color: #251b15;
+
+  background:
+    #eee5d9;
+}
+
+.demo-savore-hero {
+  display: flex;
+
+  min-height: 390px;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding:
+    60px 30px;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #f7efe5,
+      #d8c2a8
+    );
+}
+
+.demo-savore h3 {
+  max-width: 700px;
+
+  font-family:
+    Georgia,
+    serif;
+
+  font-weight: 400;
+
+  font-style: italic;
+}
+
+.demo-savore p {
+  max-width: 390px;
+}
+
+.demo-savore button {
+  color:
+    #f6efe6;
+
+  background:
+    #251b15;
+}
+
+.demo-savore-bottom {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      1fr
+    );
+
+  border-top:
+    1px solid
+    rgba(
+      37,
+      27,
+      21,
+      0.16
+    );
+}
+
+.demo-savore-bottom span {
+  display: flex;
+
+  align-items: center;
+
+  justify-content:
+    space-between;
+
+  gap: 14px;
+
+  padding:
+    20px 25px;
+
+  font-size: 0.58rem;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   VANTAGE
+   ========================================================= */
+
+.demo-vantage {
+  color:
+    #111827;
+
+  background:
+    #f3f2ed;
+}
+
+.demo-vantage-hero {
+  display: grid;
+
+  grid-template-columns:
+    1.15fr
+    0.85fr;
+
+  gap: 30px;
+
+  min-height: 440px;
+
+  padding:
+    55px 48px;
+}
+
+.demo-vantage-hero
+> div:first-child {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content:
+    center;
+}
+
+.demo-vantage h3 {
+  max-width: 550px;
+
+  font-weight: 400;
+}
+
+.demo-vantage button {
+  align-self:
+    flex-start;
+
+  color:
+    #ffffff;
+
+  background:
+    #111827;
+}
+
+.demo-property-card {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content:
+    flex-end;
+
+  min-height: 320px;
+
+  padding: 25px;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      145deg,
+      #6c7378,
+      #25303a
+    );
+}
+
+.demo-property-card span {
+  margin-bottom:
+    auto;
+
+  font-size: 0.56rem;
+
+  letter-spacing: 0.12em;
+}
+
+.demo-property-card strong {
+  font-size: 1.2rem;
+}
+
+.demo-property-card small {
+  margin-top: 7px;
+
+  opacity: 0.68;
+}
+
+
+/* =========================================================
+   LUMINA
+   ========================================================= */
+
+.demo-lumina {
+  color: #382a30;
+
+  background:
+    #f5e8ea;
+}
+
+.demo-lumina-hero {
+  min-height: 400px;
+
+  padding:
+    75px 55px;
+
+  background:
+    radial-gradient(
+      circle at
+      75% 50%,
+      #ead1d4,
+      transparent 32%
+    ),
+    linear-gradient(
+      120deg,
+      #f8eeef,
+      #e7d4d5
+    );
+}
+
+.demo-lumina h3 {
+  max-width: 530px;
+
+  font-family:
+    Georgia,
+    serif;
+
+  font-weight: 400;
+}
+
+.demo-lumina p {
+  max-width: 300px;
+}
+
+.demo-lumina button {
+  color:
+    #ffffff;
+
+  background:
+    #382a30;
+}
+
+.demo-lumina-services {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      1fr
+    );
+
+  border-top:
+    1px solid
+    rgba(
+      56,
+      42,
+      48,
+      0.13
+    );
+}
+
+.demo-lumina-services span {
+  padding: 18px;
+
+  text-align: center;
+
+  font-size: 0.58rem;
+
+  letter-spacing: 0.13em;
+
+  border-right:
+    1px solid
+    rgba(
+      56,
+      42,
+      48,
+      0.1
+    );
+}
+
+
+/* =========================================================
+   APEX BUILD
+   ========================================================= */
+
+.demo-apex {
+  color:
+    #f4f4f4;
+
+  background:
+    #181818;
+}
+
+.demo-apex-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(
+      0,
+      1fr
+    )
+    minmax(
+      180px,
+      0.75fr
+    );
+
+  gap: 38px;
+
+  min-height: 410px;
+
+  padding:
+    45px 38px;
+}
+
+.demo-apex-copy {
+  display: flex;
+
+  min-width: 0;
+
+  flex-direction:
+    column;
+
+  justify-content:
+    center;
+}
+
+.demo-apex h3 {
+  max-width: 520px;
+
+  font-size:
+    clamp(
+      2.8rem,
+      7cqw,
+      4.8rem
+    );
+
+  font-weight: 500;
+
+  line-height: 0.96;
+
+  text-transform:
+    uppercase;
+}
+
+.demo-apex button {
+  align-self:
+    flex-start;
+
+  color:
+    #111111;
+
+  background:
+    #f6f6f6;
+}
+
+.demo-apex-structure {
+  display: grid;
+
+  min-width: 0;
+
+  grid-template-columns:
+    repeat(
+      3,
+      1fr
+    );
+
+  gap: 8px;
+
+  align-items: end;
+}
+
+.demo-apex-structure span {
+  display: block;
+
+  background:
+    linear-gradient(
+      to top,
+      #454545,
+      #2c2c2c
+    );
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
+}
+
+.demo-apex-structure
+span:nth-child(1) {
+  height: 70%;
+}
+
+.demo-apex-structure
+span:nth-child(2) {
+  height: 100%;
+}
+
+.demo-apex-structure
+span:nth-child(3) {
+  height: 82%;
+}
+
+.demo-apex-footer {
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  padding:
+    18px 24px;
+
+  border-top:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.1
+    );
+
+  font-size: 0.56rem;
+
+  letter-spacing:
+    0.1em;
+}
+
+
+/* =========================================================
+   MONO MARKET
+   ========================================================= */
+
+.demo-mono {
+  color:
+    #101010;
+
+  background:
+    #fafafa;
+}
+
+.demo-mono-title {
+  padding:
+    40px 28px 25px;
+}
+
+.demo-mono-title span {
+  font-size: 0.56rem;
+
+  letter-spacing:
+    0.13em;
+}
+
+.demo-mono h3 {
+  max-width: 600px;
+
+  margin-top: 13px;
+
+  font-weight: 400;
+}
+
+.demo-products {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      1fr
+    );
+
+  gap: 9px;
+
+  padding:
+    0 28px 30px;
+}
+
+.demo-products article div {
+  aspect-ratio:
+    0.8;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ededed,
+      #d2d2d2
+    );
+}
+
+.demo-products article span {
+  display: block;
+
+  margin-top: 8px;
+
+  font-size: 0.55rem;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   CONTAINER QUERY
+   TABLET WEBSITE LAYOUT
+
+   Se activa basado en el ancho del PREVIEW.
+   No basado en el dispositivo físico.
+   ========================================================= */
+
+@container (max-width: 700px) {
+
+  .demo-site {
+    min-height: 570px;
+  }
+
+
+  /* Header */
+
+  .demo-header {
+    padding:
+      20px 24px;
+  }
+
+  .demo-header nav {
+    gap: 15px;
+
+    font-size: 0.62rem;
+  }
+
+
+  /* General typography */
+
+  .demo-site h3 {
+    font-size:
+      clamp(
+        2.5rem,
+        8cqw,
+        4.4rem
+      );
+
+    line-height: 0.97;
+
+    letter-spacing:
+      -0.045em;
+  }
+
+  .demo-site p {
+    font-size: 0.88rem;
+
+    line-height: 1.6;
+  }
+
+
+  /* -------------------------
+     NOVA LEGAL
+     ------------------------- */
+
+  .demo-legal-hero {
+    grid-template-columns:
+      minmax(
+        0,
+        1.1fr
+      )
+      minmax(
+        160px,
+        0.65fr
+      );
+
+    gap: 28px;
+
+    padding:
+      50px 38px 34px;
+  }
+
+  .demo-legal h3 {
+    font-size:
+      clamp(
+        2.7rem,
+        7.5cqw,
+        4.2rem
+      );
+  }
+
+  .demo-legal-art {
+    min-height: 250px;
+  }
+
+
+  /* -------------------------
+     SAVORÉ
+     ------------------------- */
+
+  .demo-savore-hero {
+    min-height: 450px;
+
+    padding:
+      55px 35px;
+  }
+
+  .demo-savore h3 {
+    max-width: 540px;
+
+    margin-left:
+      auto;
+
+    margin-right:
+      auto;
+
+    font-size:
+      clamp(
+        3rem,
+        8cqw,
+        4.3rem
+      );
+  }
+
+  .demo-savore p {
+    max-width: 360px;
+
+    margin-left:
+      auto;
+
+    margin-right:
+      auto;
+  }
+
+
+  /* -------------------------
+     VANTAGE
+     ------------------------- */
+
+  .demo-vantage-hero {
+    grid-template-columns:
+      minmax(
+        0,
+        1fr
+      )
+      minmax(
+        190px,
+        0.75fr
+      );
+
+    gap: 26px;
+
+    padding:
+      46px 34px;
+  }
+
+  .demo-vantage h3 {
+    font-size:
+      clamp(
+        2.6rem,
+        7cqw,
+        3.9rem
+      );
+  }
+
+  .demo-property-card {
+    min-height: 290px;
+  }
+
+
+  /* -------------------------
+     LUMINA
+     ------------------------- */
+
+  .demo-lumina-hero {
+    min-height: 440px;
+
+    padding:
+      58px 38px;
+  }
+
+  .demo-lumina h3 {
+    max-width: 450px;
+
+    font-size:
+      clamp(
+        2.8rem,
+        8cqw,
+        4.2rem
+      );
+  }
+
+
+  /* -------------------------
+     APEX
+     ------------------------- */
+
+  .demo-apex-grid {
+    grid-template-columns:
+      minmax(
+        0,
+        1.15fr
+      )
+      minmax(
+        125px,
+        0.5fr
+      );
+
+    gap: 30px;
+
+    min-height: 470px;
+
+    padding:
+      48px 38px;
+  }
+
+  .demo-apex h3 {
+    max-width: 410px;
+
+    font-size:
+      clamp(
+        2.9rem,
+        7cqw,
+        3.8rem
+      );
+
+    line-height: 0.97;
+  }
+
+  .demo-apex-copy p {
+    max-width: 360px;
+  }
+
+  .demo-apex-structure {
+    height: 300px;
+
+    align-self: center;
+  }
+
+
+  /* -------------------------
+     MONO
+     ------------------------- */
+
+  .demo-mono-title {
+    padding:
+      38px 26px 24px;
+  }
+
+  .demo-mono h3 {
+    max-width: 520px;
+
+    font-size:
+      clamp(
+        2.9rem,
+        8cqw,
+        4.2rem
+      );
+  }
+
+  .demo-products {
+    gap: 8px;
+
+    padding:
+      0 24px 28px;
+  }
+}
+
+
+/* =========================================================
+   CONTAINER QUERY
+   MOBILE WEBSITE LAYOUT
+
+   Se activa cuando el WEBSITE SIMULADO
+   mide aproximadamente 430px o menos.
+
+   Por eso funciona igual desde:
+   - PC
+   - Tablet
+   - Teléfono
+   ========================================================= */
+
+@container (max-width: 430px) {
+
+  .demo-site {
+    min-height: 620px;
+  }
+
+
+  /* Header */
+
+  .demo-header {
+    padding:
+      18px 20px;
+
+    font-size: 0.62rem;
+  }
+
+  .demo-header nav {
+    display: none;
+  }
+
+
+  /* General Typography */
+
+  .demo-site h3 {
+    max-width: 100%;
+
+    font-size: 2.75rem;
+
+    line-height: 0.98;
+
+    letter-spacing:
+      -0.045em;
+  }
+
+  .demo-site p {
+    max-width: 100%;
+
+    margin-top: 18px;
+
+    font-size: 0.88rem;
+
+    line-height: 1.6;
+  }
+
+  .demo-kicker {
+    margin-bottom: 12px;
+
+    font-size: 0.56rem;
+  }
+
+  .demo-site button {
+    margin-top: 22px;
+
+    padding:
+      12px 15px;
+
+    font-size: 0.58rem;
+  }
+
+
+  /* =======================================================
+     NOVA LEGAL MOBILE
+     ======================================================= */
+
+  .demo-legal-hero {
+    grid-template-columns:
+      1fr;
+
+    gap: 28px;
+
+    min-height: auto;
+
+    padding:
+      42px 22px 30px;
+  }
+
+  .demo-legal h3 {
+    font-size: 2.7rem;
+  }
+
+  .demo-legal-art {
+    min-height: 190px;
+  }
+
+  .demo-legal-art span {
+    font-size: 3.5rem;
+  }
+
+  .demo-legal-stats {
+    grid-template-columns:
+      1fr;
+  }
+
+  .demo-legal-stats div {
+    padding:
+      14px 20px;
+
+    border-right: 0;
+
+    border-bottom:
+      1px solid
+      rgba(
+        255,
+        255,
+        255,
+        0.1
+      );
+  }
+
+
+  /* =======================================================
+     SAVORE MOBILE
+     ======================================================= */
+
+  .demo-savore-hero {
+    min-height: 470px;
+
+    padding:
+      52px 24px 44px;
+  }
+
+  .demo-savore h3 {
+    max-width: 310px;
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+    font-size: 2.85rem;
+
+    line-height: 0.96;
+  }
+
+  .demo-savore p {
+    max-width: 285px;
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+    font-size: 0.86rem;
+  }
+
+  .demo-savore-bottom {
+    grid-template-columns:
+      1fr;
+  }
+
+  .demo-savore-bottom span {
+    padding:
+      15px 20px;
+
+    border-bottom:
+      1px solid
+      rgba(
+        37,
+        27,
+        21,
+        0.12
+      );
+  }
+
+
+  /* =======================================================
+     VANTAGE MOBILE
+     ======================================================= */
+
+  .demo-vantage-hero {
+    grid-template-columns:
+      1fr;
+
+    gap: 30px;
+
+    min-height: auto;
+
+    padding:
+      42px 22px 28px;
+  }
+
+  .demo-vantage h3 {
+    font-size: 2.7rem;
+  }
+
+  .demo-property-card {
+    min-height: 230px;
+
+    padding: 20px;
+  }
+
+
+  /* =======================================================
+     LUMINA MOBILE
+     ======================================================= */
+
+  .demo-lumina-hero {
+    min-height: 450px;
+
+    padding:
+      55px 22px 40px;
+  }
+
+  .demo-lumina h3 {
+    max-width: 285px;
+
+    font-size: 2.85rem;
+  }
+
+  .demo-lumina-services {
+    grid-template-columns:
+      1fr;
+  }
+
+  .demo-lumina-services span {
+    padding: 15px;
+
+    border-right: 0;
+
+    border-bottom:
+      1px solid
+      rgba(
+        56,
+        42,
+        48,
+        0.1
+      );
+  }
+
+
+  /* =======================================================
+     APEX MOBILE
+     ======================================================= */
+
+  .demo-apex-grid {
+    grid-template-columns:
+      1fr;
+
+    gap: 30px;
+
+    min-height: auto;
+
+    padding:
+      42px 22px 28px;
+  }
+
+  .demo-apex h3 {
+    max-width: 100%;
+
+    font-size: 2.55rem;
+
+    line-height: 0.98;
+  }
+
+  .demo-apex-structure {
+    min-height: 210px;
+
+    height: 210px;
+  }
+
+  .demo-apex-footer {
+    padding:
+      15px 18px;
+  }
+
+
+  /* =======================================================
+     MONO MOBILE
+     ======================================================= */
+
+  .demo-mono-title {
+    padding:
+      36px 20px 24px;
+  }
+
+  .demo-mono h3 {
+    font-size: 2.7rem;
+  }
+
+  .demo-products {
+    grid-template-columns:
+      1fr;
+
+    gap: 24px;
+
+    padding:
+      0 20px 28px;
+  }
+
+  .demo-products
+  article div {
+    aspect-ratio:
+      1.15;
+  }
+}
+
+
+/* =========================================================
+   ZYROQ PAGE RESPONSIVE
+   Estas reglas responden al DISPOSITIVO REAL.
+   No cambian el website simulado.
+   ========================================================= */
+
+@media (max-width: 980px) {
+
+  .templates-hero {
+    grid-template-columns:
+      1fr;
+  }
+
+  .templates-hero-badge {
+    justify-self: start;
+  }
+
+  .templates-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .templates-cta {
+    align-items:
+      flex-start;
+
+    flex-direction:
+      column;
+  }
+
+  .template-modal-footer {
+    align-items:
+      flex-start;
+
+    flex-direction:
+      column;
+  }
+}
+
+
+/* =========================================================
+   REAL TABLETS / SMALL LAPTOPS
+   641px - 768px
+   ========================================================= */
+
+@media
+  (min-width: 641px)
+  and
+  (max-width: 768px) {
+
+  .templates {
+    padding:
+      48px 0 80px;
+  }
+
+  .templates-hero {
+    gap: 28px;
+
+    padding-bottom: 38px;
+  }
+
+  .templates-hero h1 {
+    font-size:
+      clamp(
+        2.5rem,
+        10vw,
+        4rem
+      );
+  }
+
+  .templates-filter-area {
+    padding:
+      22px 0 30px;
+  }
+
+  .templates-filters {
+    flex-wrap: nowrap;
+
+    overflow-x: auto;
+
+    padding-bottom: 5px;
+
+    scrollbar-width: none;
+  }
+
+  .templates-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .templates-filter {
+    flex:
+      0 0 auto;
+  }
+
+
+  /* Modal */
+
+  .template-modal {
+    align-items:
+      flex-end;
+
+    padding: 0;
+  }
+
+  .template-modal-panel {
+    max-height: 95vh;
+
+    border-right: 0;
+
+    border-bottom: 0;
+
+    border-left: 0;
+
+    border-radius:
+      20px 20px 0 0;
+  }
+
+  .template-device-stage {
+    min-height: 500px;
+
+    padding:
+      24px 16px;
+  }
+
+
+  /* El usuario está físicamente en tablet,
+     pero puede visualizar los 3 tamaños. */
+
+  .template-device-desktop {
+    width: 960px;
+
+    max-width: none;
+
+    zoom: 0.68;
+  }
+
+  .template-device-tablet {
+    width: 660px;
+
+    max-width: none;
+
+    zoom: 0.94;
+  }
+
+  .template-device-mobile {
+    width: 375px;
+
+    zoom: 1;
+  }
+}
+
+
+/* =========================================================
+   REAL SMALL TABLETS / LARGE PHONES
+   481px - 640px
+   ========================================================= */
+
+@media
+  (min-width: 481px)
+  and
+  (max-width: 640px) {
+
+  .templates {
+    padding:
+      44px 0 75px;
+  }
+
+  .templates-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .templates-filters {
+    flex-wrap: nowrap;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+  }
+
+  .templates-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .templates-filter {
+    flex:
+      0 0 auto;
+  }
+
+
+  /* Modal */
+
+  .template-modal {
+    align-items:
+      flex-end;
+
+    padding: 0;
+  }
+
+  .template-modal-panel {
+    max-height: 96vh;
+
+    border-right: 0;
+
+    border-bottom: 0;
+
+    border-left: 0;
+
+    border-radius:
+      20px 20px 0 0;
+  }
+
+  .template-modal-header {
+    padding: 18px;
+  }
+
+  .template-device-selector {
+    justify-content:
+      flex-start;
+
+    overflow-x: auto;
+
+    padding:
+      12px 16px;
+
+    scrollbar-width:
+      none;
+  }
+
+  .template-device-selector::-webkit-scrollbar {
+    display: none;
+  }
+
+  .template-device-stage {
+    min-height: 430px;
+
+    padding:
+      20px 14px;
+  }
+
+  .template-device-frame {
+    border-width: 6px;
+
+    border-radius:
+      12px;
+  }
+
+
+  /* Los 3 previews siguen disponibles. */
+
+  .template-device-desktop {
+    width: 960px;
+
+    max-width: none;
+
+    zoom: 0.52;
+  }
+
+  .template-device-tablet {
+    width: 660px;
+
+    max-width: none;
+
+    zoom: 0.75;
+  }
+
+  .template-device-mobile {
+    width: 375px;
+
+    max-width: 375px;
+
+    zoom: 1;
+  }
+
+  .template-modal-footer {
+    gap: 18px;
+
+    padding: 18px;
+  }
+
+  .template-modal-request {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   REAL MOBILE
+   <= 480px
+
+   Aunque el usuario esté físicamente en teléfono:
+   - Desktop se presenta reducido
+   - Tablet se presenta reducido
+   - Mobile se presenta casi a tamaño real
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .templates {
+    padding:
+      38px 0 70px;
+  }
+
+
+  /* Hero */
+
+  .templates-hero {
+    grid-template-columns:
+      1fr;
+
+    gap: 24px;
+
+    padding-bottom: 34px;
+  }
+
+  .templates-hero h1 {
+    font-size:
+      clamp(
+        2.4rem,
+        13vw,
+        3.7rem
+      );
+  }
+
+  .templates-hero p {
+    margin-top: 18px;
+
+    font-size:
+      0.92rem;
+  }
+
+  .templates-hero-badge {
+    justify-self: start;
+
+    max-width: 100%;
+
+    font-size:
+      0.59rem;
+
+    white-space:
+      normal;
+  }
+
+
+  /* Filters */
+
+  .templates-filter-area {
+    padding:
+      20px 0 28px;
+  }
+
+  .templates-filters {
+    flex-wrap: nowrap;
+
+    overflow-x: auto;
+
+    padding-bottom: 5px;
+
+    scrollbar-width: none;
+  }
+
+  .templates-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .templates-filter {
+    flex:
+      0 0 auto;
+  }
+
+
+  /* Grid */
+
+  .templates-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .template-card-preview {
+    min-height: 300px;
+  }
+
+  .template-card-content {
+    padding:
+      21px 20px 24px;
+  }
+
+  .template-card-top {
+    align-items:
+      flex-start;
+
+    flex-direction:
+      column;
+
+    gap: 9px;
+  }
+
+  .template-card-features {
+    gap: 5px;
+  }
+
+
+  /* Overlay siempre visible en touch */
+
+  .template-card-overlay {
+    opacity: 1;
+
+    align-items:
+      flex-end;
+
+    justify-content:
+      flex-end;
+
+    padding: 16px;
+
+    background:
+      linear-gradient(
+        to top,
+        rgba(
+          0,
+          0,
+          0,
+          0.38
+        ),
+        transparent 35%
+      );
+
+    backdrop-filter:
+      none;
+
+    pointer-events:
+      none;
+  }
+
+  .template-preview-button {
+    pointer-events:
+      auto;
+  }
+
+
+  /* CTA */
+
+  .templates-cta {
+    align-items:
+      stretch;
+
+    flex-direction:
+      column;
+
+    margin-top: 65px;
+  }
+
+  .templates-cta-button {
+    width: 100%;
+  }
+
+
+  /* Modal */
+
+  .template-modal {
+    align-items:
+      flex-end;
+
+    padding: 0;
+  }
+
+  .template-modal-panel {
+    width: 100%;
+
+    max-height: 96vh;
+
+    border-right: 0;
+
+    border-bottom: 0;
+
+    border-left: 0;
+
+    border-radius:
+      20px 20px 0 0;
+  }
+
+  .template-modal-header {
+    padding: 17px;
+  }
+
+  .template-modal-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .template-modal-close {
+    width: 40px;
+
+    height: 40px;
+  }
+
+
+  /* Device Buttons */
+
+  .template-device-selector {
+    justify-content:
+      flex-start;
+
+    gap: 7px;
+
+    overflow-x: auto;
+
+    padding:
+      11px 14px;
+
+    scrollbar-width:
+      none;
+  }
+
+  .template-device-selector::-webkit-scrollbar {
+    display: none;
+  }
+
+  .template-device-selector button {
+    flex:
+      0 0 auto;
+  }
+
+
+  /* Stage */
+
+  .template-device-stage {
+    justify-content:
+      center;
+
+    min-height: 390px;
+
+    padding:
+      20px 10px;
+
+    overflow: auto;
+  }
+
+  .template-device-frame {
+    border-width: 5px;
+
+    border-radius:
+      11px;
+  }
+
+
+  /* =======================================================
+     FÍSICAMENTE EN MOBILE:
+     REDUCIMOS LOS PREVIEWS GRANDES.
+
+     Esto NO cambia su responsive interno.
+     Desktop sigue siendo un website de 960px.
+     Tablet sigue siendo un website de 660px.
+     ======================================================= */
+
+  .template-device-desktop {
+    width: 960px;
+
+    max-width: none;
+
+    zoom: 0.34;
+  }
+
+  .template-device-tablet {
+    width: 660px;
+
+    max-width: none;
+
+    zoom: 0.5;
+  }
+
+  .template-device-mobile {
+    width: 375px;
+
+    max-width: 375px;
+
+    zoom: 0.88;
+  }
+
+
+  /* Footer */
+
+  .template-modal-footer {
+    align-items:
+      stretch;
+
+    flex-direction:
+      column;
+
+    gap: 18px;
+
+    padding: 18px;
+  }
+
+  .template-modal-request {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  .template-device-desktop {
+    zoom: 0.3;
+  }
+
+  .template-device-tablet {
+    zoom: 0.44;
+  }
+
+  .template-device-mobile {
+    zoom: 0.78;
+  }
+
+  .template-device-selector button {
+    padding:
+      0 11px;
+
+    font-size: 0.68rem;
+  }
+
+  .template-device-stage {
+    min-height: 350px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media
+(prefers-reduced-motion: reduce) {
+
+  .template-card,
+  .template-card-request i,
+  .template-device-frame,
+  .templates-filter,
+  .template-device-selector button {
+    transition: none;
+  }
+
+  .template-card:hover {
+    transform: none;
+  }
+}

@@ -12,6 +12,7 @@ import WhatsAppButton from './components/layout/WhatsAppButton/WhatsAppButton'
 import Home from './pages/Home/Home'
 import ServicesPage from './pages/Services/ServicesPage'
 import PackagesPage from './pages/Packages/PackagesPage'
+import TemplatesPage from './pages/Templates/TemplatesPage'
 import ContactPage from './pages/Contact/ContactPage'
 import NotFoundPage from './pages/NotFound/NotFoundPage'
 
@@ -35,6 +36,11 @@ function App() {
           path="/packages"
           element={<PackagesPage />}
         />
+
+        <Route
+          path="/templates"
+          element={<TemplatesPage />}
+/>
 
         <Route
           path="/solutions"

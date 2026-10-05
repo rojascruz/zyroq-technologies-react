@@ -162,6 +162,21 @@ function Footer() {
                 />
               </NavLink>
 
+              <NavLink
+                to="/templates"
+                className="footer-nav-link"
+              >
+                <span>
+                  {t.common.navigation.templates}
+                </span>
+
+                <i
+                  className="bi bi-arrow-right"
+                  aria-hidden="true"
+                />
+              </NavLink>
+
+
 
               <NavLink
                 to="/contact"
