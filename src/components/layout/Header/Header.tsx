@@ -172,6 +172,18 @@ function Header() {
             {t.common.navigation.packages}
           </NavLink>
 
+          <NavLink
+            to="/templates"
+            onClick={closeMenus}
+            className={({ isActive }) =>
+              isActive
+                ? 'header-nav-active'
+                : undefined
+            }
+          >
+            {t.common.navigation.templates}
+          </NavLink>
+
 
           <NavLink
             to="/contact"

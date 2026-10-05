@@ -3,6 +3,7 @@ export const commonEs = {
     home: 'Inicio',
     services: 'Servicios',
     packages: 'Paquetes',
+    templates: 'Diseños',
     contact: 'Contacto',
     quote: 'Solicitar cotización',
   },
